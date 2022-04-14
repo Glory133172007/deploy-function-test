@@ -1,5 +1,8 @@
 name: 'HuaweiCloud Functiongraph Deploy'
 description: 'deploy function to huaweicloud'
+branding:
+  color: 'red'
+  icon: 'chevron-up'
 author: 'wenchui'
 inputs:
   ak: 

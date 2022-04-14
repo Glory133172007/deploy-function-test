@@ -24,7 +24,9 @@ function_file:函数文件的路径，如果是obs，请填写该文件在OBS上
 ## **使用样例:**
 deploy-functiongraph-action 在github workflow 上的使用样例:  
 ### **参数说明:**
-需要在项目的setting--Secret--Actions下添加 AK,SK,PROJECTID,FUNCTIONAME四个参数  
+需要在项目的setting--Secret--Actions下添加 ACCESSKEY ,SECRETACCESSKEY 两个参数  
+同时需要再workflow中填写 endpint，projectid，function_urn，obs文件链接等参数
+
 ### 1、OBS方式
 如果函数文件比较大(超过50M),请先将文件上传到OBS，然后将该文件在OBS中的路径配置到function_file上,function_codetype填写为obs  
 ```yaml

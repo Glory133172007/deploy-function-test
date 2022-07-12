@@ -19,6 +19,6 @@ jobs:
         sk: ${{ secrets.SECRETACCESSKEY }}
         endpoint: functiongraph.cn-north-4.myhuaweicloud.com
         project_id: 086cd4ee9e00268e2f76c00ea33b6cbe
-        function_codetype: file
-        function_urn: urn:fss:cn-north-4:086cd4ee9e00268e2f76c00ea33b6cbe:function:default:py-func-lxy-test:latest
-        function_file: ./resource/index.py
+        function_codetype: zip
+        function_urn: urn:fss:cn-north-4:086cd4ee9e00268e2f76c00ea33b6cbe:function:default:lxy-test:latest
+        function_file: ./resource/zipfunction/index.zip

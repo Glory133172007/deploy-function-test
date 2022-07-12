@@ -1,29 +1,24 @@
-on: # rebuild any PRs and main branch changes
-  pull_request:
-  push:
-    branches:
-      - main
-      - 'releases/*'
+name: "commit-master"
 
+on:
+  push:
+    branches: 
+    - 'master'
 jobs:
-  build: # make sure build/ci work properly
+  build:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v2
-      - run: |
-          npm install
-      - run: |
-          npm run all
-  test: # make sure the action works on a clean machine without building
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: ./
-        with:
+    - name: Check Out 
+      uses: actions/checkout@v2
+
+    - name: deploy single function file to huaweicloud functiongraph
+      uses: ./
+      with:
         ak: ${{ secrets.ACCESSKEY }}
         sk: ${{ secrets.SECRETACCESSKEY }}
-        endpoint: ${endpint}
-        project_id: ${projectid}
+        endpoint: functiongraph.cn-north-4.myhuaweicloud.com
+        project_id: 086cd4ee9e00268e2f76c00ea33b6cbe
         function_codetype: file
-        function_urn: ${function_urn}
+        function_urn: urn:fss:cn-north-4:086cd4ee9e00268e2f76c00ea33b6cbe:function:default:py-func-lxy-test:latest
         function_file: ./resource/index.py

@@ -12,16 +12,16 @@ jobs:
     - name: Check Out 
       uses: actions/checkout@v2
 
-    - name: deploy single function file to huaweicloud functiongraph
+    - name: functiongraph-deploy-action
       uses: huaweicloud/deploy-functiongraph-action@v1.0
       with:
-        ak: ${{ secrets.ACCESSKEY }}
-        sk: ${{ secrets.SECRETACCESSKEY }}
-        endpoint: functiongraph.cn-north-4.myhuaweicloud.com
+        ak: 0ZBYUANMG3HHXFDHQXBI
+        sk: cgOBET0h2wxEJofd8hY1gjzTWMPcIKOw1OWAVJYV
+        endpoint: https://functiongraph.cn-north-4.myhuaweicloud.com
         project_id: 086cd4ee9e00268e2f76c00ea33b6cbe
         function_codetype: file
-        function_urn: urn:fss:cn-north-4:086cd4ee9e00268e2f76c00ea33b6cbe:function:default:lxy-testpy:latest
-        function_file: ./resource/functions/index.py
+        function_urn: urn:fss:cn-north-4:086cd4ee9e00268e2f76c00ea33b6cbe:function:default:lxy-test1111:latest
+        function_file: ./python-sample/index.py
 
 #     - name: deploy single function file to huaweicloud functiongraph
 #       uses: ./

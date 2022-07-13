@@ -12,24 +12,24 @@ jobs:
     - name: Check Out 
       uses: actions/checkout@v2
 
-    - name: functiongraph-deploy-action
-      uses: huaweicloud/deploy-functiongraph-action@v1.0
+#     - name: functiongraph-deploy-action
+#       uses: huaweicloud/deploy-functiongraph-action@v1.0
+#       with:
+#         ak: 0ZBYUANMG3HHXFDHQXBI
+#         sk: cgOBET0h2wxEJofd8hY1gjzTWMPcIKOw1OWAVJYV
+#         endpoint: https://functiongraph.cn-north-4.myhuaweicloud.com
+#         project_id: 086cd4ee9e00268e2f76c00ea33b6cbe
+#         function_codetype: file
+#         function_urn: urn:fss:cn-north-4:086cd4ee9e00268e2f76c00ea33b6cbe:function:default:lxy-test1111:latest
+#         function_file: ./resource/index.py
+
+    - name: deploy single function file to huaweicloud functiongraph
+      uses: ./
       with:
-        ak: 0ZBYUANMG3HHXFDHQXBI
-        sk: cgOBET0h2wxEJofd8hY1gjzTWMPcIKOw1OWAVJYV
+        ak: ${{ secrets.ACCESSKEY }}
+        sk: ${{ secrets.SECRETACCESSKEY }}
         endpoint: https://functiongraph.cn-north-4.myhuaweicloud.com
         project_id: 086cd4ee9e00268e2f76c00ea33b6cbe
-        function_codetype: file
-        function_urn: urn:fss:cn-north-4:086cd4ee9e00268e2f76c00ea33b6cbe:function:default:lxy-test1111:latest
-        function_file: ./resource/index.py
-
-#     - name: deploy single function file to huaweicloud functiongraph
-#       uses: ./
-#       with:
-#         ak: ${{ secrets.ACCESSKEY }}
-#         sk: ${{ secrets.SECRETACCESSKEY }}
-#         endpoint: functiongraph.cn-north-4.myhuaweicloud.com
-#         project_id: 086cd4ee9e00268e2f76c00ea33b6cbe
-#         function_codetype: zip
-#         function_urn: urn:fss:cn-north-4:086cd4ee9e00268e2f76c00ea33b6cbe:function:default:func-dir2:latest
-#         function_file: ./resource/zipfunction/index.zip
+        function_codetype: zip
+        function_urn: urn:fss:cn-north-4:086cd4ee9e00268e2f76c00ea33b6cbe:function:default:func-dir2:latest
+        function_file: ./resource/zipfunction/index.zip

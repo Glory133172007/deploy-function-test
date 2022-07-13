@@ -7,23 +7,21 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
     - name: Check Out 
       uses: actions/checkout@v2
 
-#     - name: compress function files or director to zip file
-#       run: zip -j index-py.zip ./python-sample/index.py
-
-    - name: deploy compress zip function file to huaweicloud functiongraph
+    - name: deploy single function file to huaweicloud functiongraph
       uses: huaweicloud/deploy-functiongraph-action@v1.0
       with:
         ak: ${{ secrets.ACCESSKEY }}
         sk: ${{ secrets.SECRETACCESSKEY }}
         endpoint: functiongraph.cn-north-4.myhuaweicloud.com
         project_id: 086cd4ee9e00268e2f76c00ea33b6cbe
-        function_codetype: zip
+        function_codetype: file
         function_urn: urn:fss:cn-north-4:086cd4ee9e00268e2f76c00ea33b6cbe:function:default:lxy-testpy:latest
-        function_file: ./resource/zipfunction/index.zip
+        function_file: ./resource/functions/index.py
 
 #     - name: deploy single function file to huaweicloud functiongraph
 #       uses: ./

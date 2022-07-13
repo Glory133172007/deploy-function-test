@@ -33,5 +33,5 @@ jobs:
         endpoint: functiongraph.cn-north-4.myhuaweicloud.com
         project_id: 086cd4ee9e00268e2f76c00ea33b6cbe
         function_codetype: zip
-        function_urn: urn:fss:cn-north-4:086cd4ee9e00268e2f76c00ea33b6cbe:function:default:lxy-test:latest
+        function_urn: urn:fss:cn-north-4:086cd4ee9e00268e2f76c00ea33b6cbe:function:default:func-dir2:latest
         function_file: ./resource/zipfunction/index.zip
